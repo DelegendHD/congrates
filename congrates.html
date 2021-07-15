@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet"> 
+
+</head>
+<body>
+    <script>
+        function clicked() {
+            document.getElementById("block").style.transform = "rotate3d(1,0,0,180deg)";
+            document.getElementById("block").style.zIndex = "0";
+            setTimeout(function(){
+                document.getElementById("card").style.transform = "translateY(0px)";
+            }, 500);
+        }
+        function anime() {
+            document.getElementById("msg").style.marginTop = "500px";
+            document.getElementById("block").style.top = "528px";
+            document.getElementById("button").style.top = "640px"
+            document.getElementById("button").style.transform = "rotateY(180deg)";
+        }
+        function back() {
+            document.getElementById("msg").style.marginTop = "200px";
+            document.getElementById("block").style.top = "378px";
+            document.getElementById("button").style.top = "500px"
+            document.getElementById("button").style.transform = "rotateY(0deg)";
+            document.getElementById("card").style.transform = "translateY(400px)";
+            setTimeout(function(){
+                document.getElementById("block").style.transform = "rotate3d(1,0,0,0deg)";
+                document.getElementById("block").style.zIndex = "3";
+            }, 500);
+        }
+        function lol() {
+            document.getElementById("content-1").style.transform = "translateY(-400px)";
+            document.getElementById("backface").style.transform = "translateY(0px)";
+        }
+        function lol2() {
+            document.getElementById("content-1").style.transform = "translateY(0px)";
+            document.getElementById("backface").style.transform = "translateY(400px)";
+        }
+    </script>
+    <div class="button" id="button" >
+        <span  class="material-icons-outlined front" onclick="clicked()">
+        favorite
+        </span>
+        <span class="material-icons-outlined back" onclick="back()">
+            north
+        </span>
+    </div>
+    <div class="container" id="container">
+        <div class="card" id="card" onclick="anime()">     
+            <div class="content-1" id="content-1">
+                <div class="before">Congrates</div>
+                <span class="material-icons-outlined span">
+                school
+                </span>
+                <img src="imgs/koki.jpg" alt="">
+                <div class="after" onclick="lol()">
+                    <span class="material-icons-outlined switch">
+                        switch_access_shortcut
+                    </span>
+                </div>
+            </div>
+            <div class="backface" id="backface">
+                <span class="material-icons-outlined back" onclick="lol2()">
+                    north
+                </span>
+                <h2>Congrates!</h2>
+                <h3>KOKI</h3>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quaerat, dolores. Perferendis enim sed, ipsa, dolor alias hic dignissimos nostrum repudiandae temporibus error expedita est a molestias minima tempore nemo atque.</p>
+            </div>
+        </div>
+    </div>
+    <div class="block" id="block"></div>
+    <div class="msg" id="msg">
+    </div>
+</body>
+</html>
